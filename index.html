@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Winter Wonderland Gala &amp; Auction</title>
 <meta name="description" content="Join us for a magical evening of dinner, live & silent auctions, spirits pull, and community. All proceeds support our school and community.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -506,23 +507,35 @@ footer a {
   margin: 0;
 }
 
-.image-showcase img {
+.image-showcase .img-wrap {
+  position: relative;
   width: 100%;
   height: 280px;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--navy), var(--deep-blue));
 }
 
-.image-showcase img:hover { opacity: 1; }
+.image-showcase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  display: block;
+}
+
+.image-showcase .img-wrap:hover img {
+  opacity: 1;
+  transform: scale(1.03);
+}
 
 @media (max-width: 768px) {
   .image-showcase {
     grid-template-columns: repeat(3, 1fr);
   }
-  .image-showcase img { height: 200px; }
-  .image-showcase img:nth-child(4),
-  .image-showcase img:nth-child(5) { display: none; }
+  .image-showcase .img-wrap { height: 200px; }
+  .image-showcase .img-wrap:nth-child(4),
+  .image-showcase .img-wrap:nth-child(5) { display: none; }
 }
 
 /* ===== DIVIDER ===== */
@@ -589,11 +602,11 @@ footer a {
 
 <!-- IMAGE STRIP -->
 <div class="image-showcase">
-  <img src="images/slide-scripture.jpg" alt="Psalm 136:4 - Give thanks to him who alone does great wonders" loading="lazy">
-  <img src="images/slide-thankyou.jpg" alt="Thank you for your support" loading="lazy">
-  <img src="images/slide-spirits.jpg" alt="Spirits Pull - Fine wine and top shelf liquor" loading="lazy">
-  <img src="images/slide-auction.jpg" alt="Live Auction - Bid generously" loading="lazy">
-  <img src="images/slide-silent.jpg" alt="Silent Auction - Luxury getaways, tech and gifts" loading="lazy">
+  <div class="img-wrap"><img src="images/stslide_cd34aad0-64dc-46e4-a273-3e0e1ed352ba.jpeg" alt="Psalm 136:4 - Give thanks to him who alone does great wonders" loading="lazy"></div>
+  <div class="img-wrap"><img src="images/stslide_eff57c7f-6f52-496c-9a52-ce2591ddadbe.jpeg" alt="Thank you for your support" loading="lazy"></div>
+  <div class="img-wrap"><img src="images/stslide_1031c8f6-f5c7-4f04-9667-bbd4f151030b.jpeg" alt="Spirits Pull - Fine wine and top shelf liquor" loading="lazy"></div>
+  <div class="img-wrap"><img src="images/stslide_a89fd664-d88c-4c49-be36-98b9eed0c8d4.jpeg" alt="Live Auction - Bid generously" loading="lazy"></div>
+  <div class="img-wrap"><img src="images/stslide_aee01dc9-e889-491f-bb7f-16ab11382be5.jpeg" alt="Silent Auction - Luxury getaways, tech and gifts" loading="lazy"></div>
 </div>
 
 <!-- EVENTS -->
@@ -706,12 +719,14 @@ footer a {
 
 <!-- FOOTER -->
 <footer>
+  <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--frost); margin-bottom: 1.5rem;">
+    "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."<br>
+    <span style="font-style: normal; font-size: 0.9rem; color: var(--steel-blue);">— 2 Corinthians 9:7</span>
+  </p>
   <p>
-    Winter Wonderland Gala &amp; Auction<br>
-    All proceeds support our school and community.<br><br>
-    <a href="https://my.onecause.com/event/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/events/vevt:ca91f2be-d70d-4939-8c18-74059462f7b0/home/story" target="_blank" rel="noopener">
-      Powered by OneCause
-    </a>
+    Ascension Lutheran Church and School<br>
+    8811 St. Joe Road, Fort Wayne, IN 46835<br><br>
+    &copy; 2026 Ascension Lutheran Church and School
   </p>
 </footer>
 
