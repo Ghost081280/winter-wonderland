@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Winter Wonderland Gala &amp; Auction</title>
-<meta name="description" content="Join us for a magical evening of dinner, live & silent auctions, spirits pull, and community. All proceeds support our school and community.">
+<title>Winter Wonderland Auction — Ascension Lutheran Church &amp; School</title>
+<meta name="description" content="March 20, 2026 at 6:00 PM — Join Ascension Lutheran Church and School for a magical evening of dinner, live & silent auctions, spirits pull, and fellowship.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>❄️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,7 +49,6 @@ body {
   position: absolute;
   top: -10px;
   color: rgba(255,255,255,0.7);
-  font-size: 1rem;
   animation: fall linear infinite;
   user-select: none;
 }
@@ -103,13 +102,27 @@ body {
   max-width: 700px;
 }
 
-.snowflake-icon {
-  font-size: 2.5rem;
-  color: var(--powder);
+/* Cross icon */
+.cross-icon {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.cross-icon svg {
+  width: 32px;
+  height: 32px;
+  stroke: var(--gold-light);
+  fill: none;
+  stroke-width: 1.5;
+  opacity: 0.7;
+}
+
+.hero-snowflake {
+  display: inline-block;
   margin-bottom: 1rem;
   animation: spin-slow 8s linear infinite;
-  display: inline-block;
 }
+
+.hero-snowflake svg { width: 48px; height: 48px; }
 
 @keyframes spin-slow {
   from { transform: rotate(0deg); }
@@ -123,7 +136,7 @@ body {
   line-height: 1.05;
   letter-spacing: 0.02em;
   color: var(--snow-white);
-  margin-bottom: 0.3em;
+  margin-bottom: 0.25em;
   text-shadow: 0 0 60px rgba(196,214,232,0.3);
 }
 
@@ -133,12 +146,38 @@ body {
   color: var(--gold-light);
 }
 
+.hero-church-name {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.85rem, 2vw, 1rem);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 0.5rem;
+}
+
 .hero-subtitle {
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: clamp(1rem, 2.5vw, 1.25rem);
   letter-spacing: 0.25em;
   text-transform: uppercase;
+  color: var(--powder);
+  margin-bottom: 1.5rem;
+}
+
+.hero-date {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.3rem, 3vw, 1.8rem);
+  font-weight: 500;
+  color: var(--snow-white);
+  margin-bottom: 0.3rem;
+}
+
+.hero-location {
+  font-family: 'Raleway', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
   color: var(--powder);
   margin-bottom: 2rem;
 }
@@ -185,9 +224,10 @@ body {
   animation: bounce 2s ease-in-out infinite;
   color: var(--powder);
   opacity: 0.6;
-  font-size: 1.5rem;
   z-index: 2;
 }
+
+.scroll-hint svg { width: 24px; height: 24px; }
 
 @keyframes bounce {
   0%, 100% { transform: translateX(-50%) translateY(0); }
@@ -281,6 +321,9 @@ section {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
 }
 
 .card::before {
@@ -302,8 +345,17 @@ section {
 .card:hover::before { opacity: 1; }
 
 .card-icon {
-  font-size: 2.2rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.card-icon svg {
+  width: 40px;
+  height: 40px;
+  stroke: var(--gold-light);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
 }
 
 .card h3 {
@@ -320,6 +372,32 @@ section {
   line-height: 1.6;
   font-weight: 300;
 }
+
+.card-link-hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  transition: color 0.3s ease;
+}
+
+.card:hover .card-link-hint { color: var(--gold-light); }
+
+.card-link-hint svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .card-link-hint svg { transform: translateX(3px); }
 
 /* ===== TICKETS / DINNER ===== */
 .tickets-section {
@@ -357,7 +435,7 @@ section {
 }
 
 .ticket-card.featured::after {
-  content: '★ Most Popular';
+  content: 'Most Popular';
   position: absolute;
   top: -12px;
   left: 50%;
@@ -426,6 +504,18 @@ section {
   color: var(--gold-light);
 }
 
+.cash-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold-light);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  vertical-align: -3px;
+  margin-right: 0.3rem;
+}
+
 /* ===== CTA SECTION ===== */
 .cta-section {
   background: linear-gradient(180deg, var(--deep-blue) 0%, var(--navy) 100%);
@@ -492,50 +582,16 @@ footer p {
   line-height: 1.8;
 }
 
-footer a {
-  color: var(--powder);
-  text-decoration: none;
+.footer-cross {
+  margin-bottom: 1rem;
 }
-
-/* ===== IMAGE ROW ===== */
-.image-showcase {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 0;
-  max-width: 100%;
-  overflow: hidden;
-  margin: 0;
-}
-
-.image-showcase .img-wrap {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  overflow: hidden;
-  background: linear-gradient(135deg, var(--navy), var(--deep-blue));
-}
-
-.image-showcase img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.85;
-  transition: opacity 0.4s ease, transform 0.4s ease;
-  display: block;
-}
-
-.image-showcase .img-wrap:hover img {
-  opacity: 1;
-  transform: scale(1.03);
-}
-
-@media (max-width: 768px) {
-  .image-showcase {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .image-showcase .img-wrap { height: 200px; }
-  .image-showcase .img-wrap:nth-child(4),
-  .image-showcase .img-wrap:nth-child(5) { display: none; }
+.footer-cross svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--steel-blue);
+  fill: none;
+  stroke-width: 1.5;
+  opacity: 0.5;
 }
 
 /* ===== DIVIDER ===== */
@@ -558,7 +614,7 @@ footer a {
   transform: translateY(0);
 }
 
-/* ===== RESPONSIVE POLISH ===== */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 480px) {
   .hero { padding: 3rem 1.25rem; }
   .card { padding: 1.5rem; }
@@ -575,9 +631,17 @@ footer a {
 <!-- HERO -->
 <section class="hero">
   <div class="hero-content fade-in">
-    <div class="snowflake-icon">❄</div>
+    <div class="cross-icon">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="2" x2="12" y2="22"/>
+        <line x1="5" y1="8" x2="19" y2="8"/>
+      </svg>
+    </div>
+    <p class="hero-church-name">Ascension Lutheran Church &amp; School</p>
     <h1><em>Winter</em><br>Wonderland</h1>
     <p class="hero-subtitle">Gala Dinner &amp; Auction</p>
+    <p class="hero-date">Friday, March 20, 2026 &middot; 6:00 PM</p>
+    <p class="hero-location">8811 St. Joe Road, Fort Wayne, IN 46835</p>
     <div class="hero-details">
       <strong>An Enchanted Evening of Fellowship &amp; Giving</strong><br>
       Dinner · Live Auction · Silent Auction · Spirits Pull
@@ -586,7 +650,11 @@ footer a {
       Get Tickets &amp; Register
     </a>
   </div>
-  <div class="scroll-hint">↓</div>
+  <div class="scroll-hint">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"/>
+    </svg>
+  </div>
 </section>
 
 <!-- SCRIPTURE -->
@@ -600,15 +668,6 @@ footer a {
   </div>
 </section>
 
-<!-- IMAGE STRIP -->
-<div class="image-showcase">
-  <div class="img-wrap"><img src="images/stslide_cd34aad0-64dc-46e4-a273-3e0e1ed352ba.jpeg" alt="Psalm 136:4 - Give thanks to him who alone does great wonders" loading="lazy"></div>
-  <div class="img-wrap"><img src="images/stslide_eff57c7f-6f52-496c-9a52-ce2591ddadbe.jpeg" alt="Thank you for your support" loading="lazy"></div>
-  <div class="img-wrap"><img src="images/stslide_1031c8f6-f5c7-4f04-9667-bbd4f151030b.jpeg" alt="Spirits Pull - Fine wine and top shelf liquor" loading="lazy"></div>
-  <div class="img-wrap"><img src="images/stslide_a89fd664-d88c-4c49-be36-98b9eed0c8d4.jpeg" alt="Live Auction - Bid generously" loading="lazy"></div>
-  <div class="img-wrap"><img src="images/stslide_aee01dc9-e889-491f-bb7f-16ab11382be5.jpeg" alt="Silent Auction - Luxury getaways, tech and gifts" loading="lazy"></div>
-</div>
-
 <!-- EVENTS -->
 <section class="events-section">
   <div class="section-inner">
@@ -616,30 +675,72 @@ footer a {
       <p class="section-label">The Evening</p>
       <h2 class="section-title">A Night to Remember</h2>
       <p class="section-body">
-        Join us for an unforgettable evening as we come together to strengthen our school and community. Enjoy a wonderful dinner, raise your paddle for incredible auction items, and pull a cork on fine wine and top shelf spirits.
+        Join us for an unforgettable evening as we come together in faith and fellowship to strengthen our school and community. Enjoy a wonderful dinner, raise your paddle for incredible auction items, and pull a cork on fine wine and top shelf spirits — all for the glory of God and the future of our children.
       </p>
     </div>
     <div class="card-grid">
-      <div class="card fade-in">
-        <div class="card-icon">🍽️</div>
+      <!-- Gala Dinner -->
+      <a class="card fade-in" href="https://my.onecause.com/event/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/events/vevt:ca91f2be-d70d-4939-8c18-74059462f7b0/home/story" target="_blank" rel="noopener">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 3c-1.5 0-2.5 1.5-2.5 3.5C9.5 8.5 10.5 10 12 10s2.5-1.5 2.5-3.5C14.5 4.5 13.5 3 12 3z"/>
+            <line x1="12" y1="10" x2="12" y2="20"/>
+            <path d="M8 20h8"/>
+            <path d="M5 3v6c0 1 1 2 3 2"/>
+            <path d="M19 3v6c0 1-1 2-3 2"/>
+          </svg>
+        </div>
         <h3>Gala Dinner</h3>
-        <p>A beautiful sit-down dinner to kick off the evening. Reserve your table and dine with friends, family, and community.</p>
-      </div>
-      <div class="card fade-in">
-        <div class="card-icon">🔨</div>
+        <p>A beautiful sit-down dinner to kick off the evening. Reserve your table and share a meal with friends, family, and our church community.</p>
+        <span class="card-link-hint">Reserve a Seat <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
+      </a>
+      <!-- Live Auction -->
+      <a class="card fade-in" href="https://my.onecause.com/event/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/events/vevt:ca91f2be-d70d-4939-8c18-74059462f7b0/auctions/live-auction-preview" target="_blank" rel="noopener">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M14.5 3.5l4 4"/>
+            <path d="M3 21l1.5-1.5"/>
+            <path d="M9.5 9.5L4.5 14.5"/>
+            <path d="M11 8l-2.5 2.5"/>
+            <path d="M15.5 2.5c.5-.5 1.5-.5 2 0l2 2c.5.5.5 1.5 0 2l-9 9-4.5.5.5-4.5 9-9z"/>
+            <path d="M18 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h7"/>
+          </svg>
+        </div>
         <h3>Live Auction</h3>
         <p>Bid generously and change lives together. Unique items and experiences going to the highest bidder — all for a great cause.</p>
-      </div>
-      <div class="card fade-in">
-        <div class="card-icon">✍️</div>
+        <span class="card-link-hint">Preview Items <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
+      </a>
+      <!-- Silent Auction -->
+      <a class="card fade-in" href="https://my.onecause.com/event/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/events/vevt:ca91f2be-d70d-4939-8c18-74059462f7b0/auctions/silent-auction" target="_blank" rel="noopener">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <rect x="3" y="4" width="18" height="16" rx="2"/>
+            <line x1="7" y1="9" x2="17" y2="9"/>
+            <line x1="7" y1="13" x2="14" y2="13"/>
+            <line x1="7" y1="17" x2="11" y2="17"/>
+            <path d="M17 14l2 2-2 2"/>
+          </svg>
+        </div>
         <h3>Silent Auction</h3>
         <p>Browse luxury getaways, tech, gifts, and more. Place your bids at your own pace — something wonderful for everyone.</p>
-      </div>
-      <div class="card fade-in">
-        <div class="card-icon">🍷</div>
+        <span class="card-link-hint">Browse Items <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
+      </a>
+      <!-- Spirits Pull -->
+      <a class="card fade-in" href="https://my.onecause.com/event/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/events/vevt:ca91f2be-d70d-4939-8c18-74059462f7b0/home/story" target="_blank" rel="noopener">
+        <div class="card-icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M8 22h8"/>
+            <path d="M12 22v-5"/>
+            <path d="M7 2h10l-1 9H8L7 2z"/>
+            <ellipse cx="12" cy="17" rx="4" ry="1.5"/>
+            <path d="M12 11v6"/>
+            <line x1="9" y1="5" x2="15" y2="5"/>
+          </svg>
+        </div>
         <h3>Spirits Pull</h3>
         <p>Pull a cork and take home a bottle of fine wine or top shelf liquor. Every pull is a winner!</p>
-      </div>
+        <span class="card-link-hint">Learn More <svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></span>
+      </a>
     </div>
   </div>
 </section>
@@ -687,8 +788,11 @@ footer a {
 
     <div class="cash-note fade-in">
       <p>
-        <strong>💵 Paying with Cash?</strong><br>
-        No problem! Contact us to reserve your seat with a cash payment. We'll get you registered and your table will be waiting.
+        <strong>
+          <span class="cash-icon"><svg viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 6v12"/><path d="M18 6v12"/></svg></span>
+          Paying with Cash?
+        </strong><br>
+        No problem! Contact us at the church office to reserve your seat with a cash payment. We'll get you registered and your table will be waiting for you on event night.
       </p>
     </div>
 
@@ -703,14 +807,23 @@ footer a {
 <!-- FINAL CTA -->
 <section class="cta-section">
   <div class="section-inner fade-in">
-    <div class="snowflake-icon" style="font-size: 2rem;">❄</div>
+    <div class="hero-snowflake" style="animation-duration: 12s;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="color: var(--powder); width: 36px; height: 36px;">
+        <line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/>
+        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/>
+        <line x1="12" y1="2" x2="9" y2="5"/><line x1="12" y1="2" x2="15" y2="5"/>
+        <line x1="12" y1="22" x2="9" y2="19"/><line x1="12" y1="22" x2="15" y2="19"/>
+        <line x1="2" y1="12" x2="5" y2="9"/><line x1="2" y1="12" x2="5" y2="15"/>
+        <line x1="22" y1="12" x2="19" y2="9"/><line x1="22" y1="12" x2="19" y2="15"/>
+      </svg>
+    </div>
     <h2 class="section-title">Because of <em style="font-family: 'Cormorant Garamond', serif; color: var(--gold-light);">You</em></h2>
-    <p>We are strengthening our school and community. Every ticket, every bid, and every dollar makes a difference.</p>
+    <p>We are strengthening our school and community. Every ticket, every bid, and every dollar makes a difference in the lives of our children and families.</p>
     <div class="cta-buttons">
       <a href="https://my.onecause.com/event/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/events/vevt:ca91f2be-d70d-4939-8c18-74059462f7b0/home/story" class="cta-primary" target="_blank" rel="noopener">
         Get Tickets
       </a>
-      <a href="https://my.onecause.com/event/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/events/vevt:ca91f2be-d70d-4939-8c18-74059462f7b0/home/story" class="cta-secondary" target="_blank" rel="noopener">
+      <a href="https://my.onecause.com/event/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/events/vevt:ca91f2be-d70d-4939-8c18-74059462f7b0/auctions/silent-auction" class="cta-secondary" target="_blank" rel="noopener">
         Browse Auction Items
       </a>
     </div>
@@ -719,6 +832,12 @@ footer a {
 
 <!-- FOOTER -->
 <footer>
+  <div class="footer-cross">
+    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="2" x2="12" y2="22"/>
+      <line x1="5" y1="8" x2="19" y2="8"/>
+    </svg>
+  </div>
   <p style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--frost); margin-bottom: 1.5rem;">
     "Each of you should give what you have decided in your heart to give, not reluctantly or under compulsion, for God loves a cheerful giver."<br>
     <span style="font-style: normal; font-size: 0.9rem; color: var(--steel-blue);">— 2 Corinthians 9:7</span>
@@ -731,17 +850,28 @@ footer a {
 </footer>
 
 <script>
-// Snowfall
+// Snowfall - SVG snowflakes
 (function() {
   const container = document.getElementById('snowfall');
-  const flakes = ['❄', '❅', '❆', '✦', '✧'];
-  for (let i = 0; i < 35; i++) {
+  function createFlakeSVG(size) {
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('width', size);
+    svg.setAttribute('height', size);
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '1.5');
+    svg.setAttribute('stroke-linecap', 'round');
+    svg.innerHTML = '<line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/><line x1="19.07" y1="4.93" x2="4.93" y2="19.07"/>';
+    return svg;
+  }
+  for (let i = 0; i < 30; i++) {
     const flake = document.createElement('span');
     flake.className = 'snowflake';
-    flake.textContent = flakes[Math.floor(Math.random() * flakes.length)];
+    const size = Math.random() * 12 + 6;
+    flake.appendChild(createFlakeSVG(size));
     flake.style.left = Math.random() * 100 + '%';
-    flake.style.fontSize = (Math.random() * 0.8 + 0.4) + 'rem';
-    flake.style.opacity = Math.random() * 0.5 + 0.2;
+    flake.style.opacity = Math.random() * 0.4 + 0.1;
     flake.style.animationDuration = (Math.random() * 8 + 6) + 's';
     flake.style.animationDelay = (Math.random() * 10) + 's';
     container.appendChild(flake);
