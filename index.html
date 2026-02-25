@@ -860,17 +860,38 @@ footer p {
 
     <div class="fade-in" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; align-items: flex-start;">
       <!-- Embedded Donate Form -->
-      <div style="flex: 1 1 400px; max-width: 620px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(196,214,232,0.12); background: #fff;">
-        <iframe width="100%" height="700" src="https://my.onecause.com/fundraiser/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/fundraisers/fundraiser:ecbd3953-0135-44a7-95af-b9c3012b6656/embed?newEmbed=1" allow="payment" style="border: none; display: block;"></iframe>
+      <div style="flex: 1 1 400px; max-width: 620px; border-radius: 16px; overflow: hidden; border: 1px solid rgba(201,169,78,0.25); box-shadow: 0 12px 40px rgba(0,0,0,0.3);">
+        <div style="background: linear-gradient(135deg, var(--navy), var(--deep-blue)); padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+          <div>
+            <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--snow-white); margin: 0;">Give a Gift</p>
+            <p style="font-size: 0.75rem; color: var(--powder); margin: 0; letter-spacing: 0.05em;">Secure donation via OneCause</p>
+          </div>
+        </div>
+        <iframe width="100%" height="680" src="https://my.onecause.com/fundraiser/organizations/f03269f8-da69-4063-82e0-95ce75bd7f6a/fundraisers/fundraiser:ecbd3953-0135-44a7-95af-b9c3012b6656/embed?newEmbed=1" allow="payment" style="border: none; display: block; background: #fff;"></iframe>
       </div>
 
       <!-- QR Code Card -->
-      <div class="fade-in" style="flex: 0 1 220px; text-align: center; padding: 2rem; background: linear-gradient(135deg, rgba(44,74,110,0.6), rgba(26,51,82,0.8)); border: 1px solid rgba(196,214,232,0.12); border-radius: 16px;">
-        <div style="background: #fff; border-radius: 12px; padding: 1rem; display: inline-block; margin-bottom: 1rem;">
-          <img src="images/donate-qr.png" alt="Scan to Donate" style="width: 160px; height: 160px; display: block;">
+      <div class="fade-in" style="flex: 0 1 240px; text-align: center;">
+        <div style="padding: 2rem 1.5rem; background: linear-gradient(160deg, rgba(44,74,110,0.7), rgba(15,35,64,0.9)); border: 1px solid rgba(201,169,78,0.25); border-radius: 16px; box-shadow: 0 12px 40px rgba(0,0,0,0.3);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--gold-light)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom: 1rem;">
+            <rect x="2" y="2" width="8" height="8" rx="1"/>
+            <rect x="14" y="2" width="8" height="8" rx="1"/>
+            <rect x="2" y="14" width="8" height="8" rx="1"/>
+            <path d="M14 14h3v3h-3z"/><path d="M20 14h.01"/><path d="M14 20h.01"/><path d="M20 20h.01"/><path d="M17 17h3v3h-3z"/>
+          </svg>
+          <div style="background: #fff; border-radius: 12px; padding: 1.25rem; display: inline-block; margin-bottom: 1.25rem; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+            <img src="images/donate-qr.png" alt="Scan to Donate" style="width: 160px; height: 160px; display: block;">
+          </div>
+          <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 500; color: var(--snow-white); margin-bottom: 0.5rem;">Scan to Donate</p>
+          <p style="font-size: 0.85rem; color: var(--frost); line-height: 1.6;">Point your phone camera at the code above to donate instantly.</p>
+          <div style="margin-top: 1.25rem; padding-top: 1.25rem; border-top: 1px solid rgba(196,214,232,0.12);">
+            <p style="font-size: 0.75rem; color: var(--steel-blue); line-height: 1.5;">Or text to give:<br>
+            <a href="https://onecau.se/_fm4u51" style="color: var(--gold-accent); text-decoration: none; font-size: 0.85rem; font-weight: 500; border-bottom: 1px solid rgba(201,169,78,0.3);">onecau.se/_fm4u51</a></p>
+          </div>
         </div>
-        <p style="font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 500; color: var(--snow-white); margin-bottom: 0.5rem;">Scan to Donate</p>
-        <p style="font-size: 0.85rem; color: var(--frost); line-height: 1.5;">Open your camera and scan this code to donate from your phone.</p>
       </div>
     </div>
   </div>
